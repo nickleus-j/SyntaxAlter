@@ -8,7 +8,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="dotnet_bot.png"
+                Source="logo.svg"
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a submarine number ten" />
@@ -27,7 +27,7 @@
                             StrokeShape="RoundRectangle 8"
                             Padding="4"
                             HorizontalOptions="Fill">
-                        <Editor  x:Name="JsBox" HorizontalOptions="Fill" />
+                        <Editor FontSize="16" x:Name="JsBox" HorizontalOptions="Fill"  HeightRequest="300"/>
                     </Border>
                 </VerticalStackLayout>
 
@@ -39,7 +39,7 @@
                             StrokeShape="RoundRectangle 8"
                             Padding="4"
                             HorizontalOptions="Fill">
-                        <Editor x:Name="NoJquery" HorizontalOptions="Fill" />
+                        <Editor FontSize="16" x:Name="NoJquery" HorizontalOptions="Fill"  HeightRequest="300"/>
                     </Border>
                 </VerticalStackLayout>
             </Grid>

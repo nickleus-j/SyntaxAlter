@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" height="100%" style="background-color: #1a1a1a; font-family: monospace;">
+    <defs>
+        <!-- Stone Tablet Gradients & Filters -->
+        <linearGradient id="stoneBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4a4d52"/>
+            <stop offset="50%" stop-color="#3b3e43"/>
+            <stop offset="100%" stop-color="#2a2c30"/>
+        </linearGradient>
+        <linearGradient id="stoneEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1f2022"/>
+            <stop offset="100%" stop-color="#555960"/>
+        </linearGradient>
+        <filter id="stoneRough" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise"/>
+            <feDiffuseLighting in="noise" lighting-color="#3b3e43" surfaceScale="2" result="light">
+                <feDistantLight azimuth="60" elevation="50"/>
+            </feDiffuseLighting>
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="0.7"/>
+                <feFuncG type="linear" slope="0.7"/>
+                <feFuncB type="linear" slope="0.7"/>
+            </feComponentTransfer>
+            <feBlend mode="multiply" in="SourceGraphic" result="blend"/>
+        </filter>
+        <filter id="chisel" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="1" dy="1" stdDeviation="0.5" flood-color="#111" flood-opacity="0.9"/>
+            <feDropShadow dx="-1" dy="-1" stdDeviation="0.5" flood-color="#7a7f88" flood-opacity="0.8"/>
+        </filter>
+
+        <!-- Paper Gradients & Filters -->
+        <linearGradient id="paperBg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#faf8f5"/>
+            <stop offset="100%" stop-color="#f0ebe1"/>
+        </linearGradient>
+        <filter id="paperShadow" x="-10%" y="-10%" width="130%" height="130%">
+            <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+        </filter>
+
+        <!-- Arrow Gradient -->
+        <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3b3e43"/>
+            <stop offset="50%" stop-color="#00d2ff"/>
+            <stop offset="100%" stop-color="#3a7bd5"/>
+        </linearGradient>
+        <filter id="arrowGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00d2ff" flood-opacity="0.6"/>
+        </filter>
+    </defs>
+
+    <!-- BACKGROUND GLOWS -->
+    <circle cx="200" cy="225" r="140" fill="#2d3748" opacity="0.3" filter="blur(40px)"/>
+    <circle cx="700" cy="225" r="140" fill="#2d3748" opacity="0.3" filter="blur(40px)"/>
+
+    <!-- ==================== LEFT: STONE TABLET ==================== -->
+    <g transform="translate(60, 60)">
+        <!-- Tablet Drop Shadow -->
+        <rect x="5" y="5" width="280" height="330" rx="12" fill="#000" opacity="0.6" filter="blur(8px)"/>
+
+        <!-- Tablet Base -->
+        <rect x="0" y="0" width="280" height="330" rx="10" fill="url(#stoneBg)" stroke="url(#stoneEdge)" stroke-width="4"/>
+
+        <!-- Tablet Texture Overlay -->
+        <rect x="0" y="0" width="280" height="330" rx="10" fill="#fff" opacity="0.04" filter="url(#stoneRough)" style="mix-blend-mode: overlay;"/>
+
+        <!-- Chiseled Cuneiform / Ancient Markings -->
+        <g filter="url(#chisel)" fill="none" stroke="#18191b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+            <!-- Row 1 -->
+            <path d="M 35 50 L 55 50 M 45 40 L 45 65" />
+            <path d="M 70 43 L 85 43 L 78 55 L 90 60" />
+            <path d="M 105 40 L 115 62 L 125 40" />
+            <path d="M 145 42 Q 160 40 155 60" />
+            <circle cx="180" cy="50" r="8" stroke-width="3"/>
+
+            <!-- Row 2 -->
+            <path d="M 35 95 L 60 95 M 42 85 L 42 105 M 53 85 L 53 105" />
+            <path d="M 75 85 L 75 105 L 95 105" />
+            <path d="M 115 88 Q 130 80 120 102" />
+            <path d="M 145 85 L 160 95 L 145 105" />
+            <path d="M 180 85 L 195 100 M 195 85 L 180 100" />
+
+            <!-- Row 3 -->
+            <path d="M 35 138 L 50 130 L 50 150" />
+            <path d="M 70 130 L 90 130 L 70 150 L 90 150" />
+            <path d="M 110 140 Q 125 125 135 140 T 150 140" />
+            <path d="M 170 130 L 170 155 M 165 130 L 180 130" />
+
+            <!-- Row 4 -->
+            <path d="M 35 185 Q 45 175 55 185 T 75 185" />
+            <path d="M 95 175 L 95 195 M 88 185 L 108 185" />
+            <path d="M 125 178 L 140 178 L 132 192 Z" />
+            <path d="M 160 175 L 160 195 M 160 185 L 175 175 M 160 185 L 175 195" />
+
+            <!-- Row 5 -->
+            <path d="M 35 225 L 50 240 M 50 225 L 35 240" />
+            <path d="M 70 232 L 95 232 M 82 220 L 82 245" />
+            <path d="M 112 225 L 122 240 L 132 225" />
+            <path d="M 152 225 Q 162 215 172 230 T 182 235" />
+
+            <!-- Row 6 (Bottom subtle cracks/runes) -->
+            <path d="M 40 280 L 65 275 L 60 290 L 85 285" />
+            <circle cx="110" cy="285" r="4" stroke-width="3"/>
+            <path d="M 135 275 L 145 290 L 155 275" />
+        </g>
+
+        <!-- Tablet Cracks/Details -->
+        <path d="M 215 0 L 225 35 L 210 60" fill="none" stroke="#1f2022" stroke-width="2" opacity="0.7"/>
+        <path d="M 0 240 L 30 255 L 20 270" fill="none" stroke="#1f2022" stroke-width="2" opacity="0.7"/>
+    </g>
+
+    <!-- ==================== MIDDLE: TRANSITION ARROW ==================== -->
+    <g transform="translate(390, 195)" filter="url(#arrowGlow)">
+        <!-- Arrow Line -->
+        <line x1="0" y1="30" x2="80" y2="30" stroke="url(#arrowGrad)" stroke-width="6" stroke-linecap="round"/>
+        <!-- Arrow Head -->
+        <polygon points="80,18 115,30 80,42" fill="#00d2ff"/>
+    </g>
+
+    <!-- ==================== RIGHT: TYPEWRITER PAPER ==================== -->
+    <g transform="translate(540, 50)">
+        <!-- Paper Shadow & Base -->
+        <rect x="0" y="0" width="270" height="350" rx="2" fill="url(#paperBg)" filter="url(#paperShadow)" transform="rotate(1.5, 135, 175)"/>
+
+        <!-- Paper Header Holes (Binder style aesthetic) -->
+        <circle cx="30" cy="40" r="5" fill="#1a1a1a" opacity="0.15"/>
+        <circle cx="30" cy="175" r="5" fill="#1a1a1a" opacity="0.15"/>
+        <circle cx="30" cy="310" r="5" fill="#1a1a1a" opacity="0.15"/>
+
+        <!-- Typewriter Content Area (Rotated group for paper tilt) -->
+        <g transform="translate(15, 20) rotate(1.5, 120, 160)">
+
+            <!-- Red Margin Line -->
+            <line x1="45" y1="0" x2="45" y2="330" stroke="#ffccd2" stroke-width="1.5" opacity="0.7"/>
+
+            <!-- Horizontal Blue Lines -->
+            <g stroke="#d0e1fd" stroke-width="1" opacity="0.5">
+                <line x1="0" y1="45" x2="240" y2="45"/>
+                <line x1="0" y1="75" x2="240" y2="75"/>
+                <line x1="0" y1="105" x2="240" y2="105"/>
+                <line x1="0" y1="135" x2="240" y2="135"/>
+                <line x1="0" y1="165" x2="240" y2="165"/>
+                <line x1="0" y1="195" x2="240" y2="195"/>
+                <line x1="0" y1="225" x2="240" y2="225"/>
+                <line x1="0" y1="255" x2="240" y2="255"/>
+                <line x1="0" y1="285" x2="240" y2="285"/>
+            </g>
+
+            <!-- Typewritten Text (Simulated Monospace Stamp Effect with slight imperfections) -->
+            <g fill="#222" font-size="12" font-weight="bold" letter-spacing="1.5">
+                <!-- Line 1 -->
+                <text x="55" y="41" opacity="0.9">USING System;</text>
+
+                <!-- Line 2 -->
+                <text x="55" y="71" opacity="0.85">USING OpenSearch.Client;</text>
+
+                <!-- Line 3 -->
+                <text x="55" y="101" opacity="0.9">var settings = new</text>
+
+                <!-- Line 4 -->
+                <text x="55" y="131" opacity="0.8">ConnectionSettings(uri)</text>
+
+                <!-- Line 5 -->
+                <text x="55" y="161" opacity="0.85">.DefaultIndex("articles");</text>
+
+                <!-- Line 6 (Indented snippet) -->
+                <text x="65" y="191" opacity="0.9">var client = new</text>
+
+                <!-- Line 7 -->
+                <text x="65" y="221" opacity="0.85">OpenSearchClient(s);</text>
+
+                <!-- Line 8 -->
+                <text x="55" y="251" opacity="0.75">// Indexing complete.</text>
+
+                <!-- Line 9: Blinking/Typewriter cursor effect -->
+                <text x="55" y="281" opacity="0.9">READY_</text>
+            </g>
+
+            <!-- Typewriter Ink Stamp Smudges / Variations -->
+            <rect x="75" y="93" width="3" height="3" fill="#000" opacity="0.3"/>
+            <rect x="142" y="153" width="2" height="2" fill="#000" opacity="0.4"/>
+            <rect x="120" y="213" width="3" height="2" fill="#000" opacity="0.35"/>
+        </g>
+    </g>
+</svg>
