@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SyntaxAlter.components.JqueryDependencyRemover">
+    <Grid ColumnDefinitions="*,*"  RowDefinitions="*,50" ColumnSpacing="12" HorizontalOptions="Fill">
+        <!-- Left Half (50%) -->
+        <VerticalStackLayout Grid.Column="0" Grid.Row="0" Margin="5,1">
+            <Label Text="Remove Jquery code" Style="{StaticResource SubHeadline}" />
+            <Border Stroke="#C49B33"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 8"
+                    Padding="4"
+                    HorizontalOptions="Fill">
+                <Editor FontSize="16" x:Name="JsBox" HorizontalOptions="Fill"  HeightRequest="300"/>
+            </Border>
+        </VerticalStackLayout>
+
+        <!-- Right Half (50%) -->
+        <VerticalStackLayout Grid.Column="1" Grid.Row="0" Margin="5,1">
+            <Label Text="Cleared" Style="{StaticResource SubHeadline}" />
+            <Border Stroke="#C49B33"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 8"
+                    Padding="4"
+                    HorizontalOptions="Fill">
+                <Editor FontSize="16" x:Name="NoJquery" HorizontalOptions="Fill"  HeightRequest="300"/>
+            </Border>
+        </VerticalStackLayout>
+        <Button x:Name="clearJQuery" Grid.Column="0" Grid.Row="1" Clicked="OnClearJqueryClicked" Text="Clear Jquery"></Button>
+    </Grid>
+            
+            
+   
+</ContentView>

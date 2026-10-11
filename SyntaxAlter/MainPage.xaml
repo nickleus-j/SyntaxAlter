@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:compo="clr-namespace:SyntaxAlter.components"
              x:Class="SyntaxAlter.MainPage">
 
     <ScrollView>
@@ -17,35 +18,8 @@
                 Text="Syntax Alter"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
-
-            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" HorizontalOptions="Fill">
-                <!-- Left Half (50%) -->
-                <VerticalStackLayout Grid.Column="0" Margin="5,1">
-                    <Label Text="Remove Jquery code" Style="{StaticResource SubHeadline}" />
-                    <Border Stroke="#C49B33"
-                            StrokeThickness="2"
-                            StrokeShape="RoundRectangle 8"
-                            Padding="4"
-                            HorizontalOptions="Fill">
-                        <Editor FontSize="16" x:Name="JsBox" HorizontalOptions="Fill"  HeightRequest="300"/>
-                    </Border>
-                </VerticalStackLayout>
-
-                <!-- Right Half (50%) -->
-                <VerticalStackLayout Grid.Column="1" Margin="5,1">
-                    <Label Text="Cleared" Style="{StaticResource SubHeadline}" />
-                    <Border Stroke="#C49B33"
-                            StrokeThickness="2"
-                            StrokeShape="RoundRectangle 8"
-                            Padding="4"
-                            HorizontalOptions="Fill">
-                        <Editor FontSize="16" x:Name="NoJquery" HorizontalOptions="Fill"  HeightRequest="300"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Grid>
+            <compo:JqueryDependencyRemover></compo:JqueryDependencyRemover>
             
-            
-            <Button x:Name="clearJQuery" Clicked="OnClearJqueryClicked" Text="Clear Jquery"></Button>
         </VerticalStackLayout>
     </ScrollView>
 

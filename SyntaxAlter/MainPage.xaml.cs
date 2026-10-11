@@ -13,9 +13,5 @@ public partial class MainPage : ContentPage
     {
         count++;
     }
-    private void OnClearJqueryClicked(object? sender, EventArgs e)
-    {
-        string cleared = JQueryDependencyRemover.RemoveJQueryDependencies(JsBox.Text);
-        NoJquery.Text = cleared;
-    }
+    
 }
