@@ -29,7 +29,4 @@
         </VerticalStackLayout>
         <Button x:Name="clearJQuery" Grid.Column="0" Grid.Row="1" Clicked="OnClearJqueryClicked" Text="Clear Jquery"></Button>
     </Grid>
-            
-            
-   
 </ContentView>
